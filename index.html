@@ -14,8 +14,22 @@
     <div class='welcome'>
     <h1> Welcome! </h1>
     <p>
-        Here is the deal! Click this if you want to know <a href="">about us</a>!
+        Here is the deal! Click this if you want to know <a id="ohnoes" href="https://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3">about us!</a>
     </p>
     </div>
+    <script>
+        // Step 1: Find the element we want the event on
+        var ohnoesEl = document.getElementById("ohnoes");
+        // Step 2: Define the event listener function
+        var onOhNoesClick = function(e) {
+            e.preventDefault();
+            var audioEl = document.createElement("audio");
+            audioEl.src = "https://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3";
+            audioEl.autoplay = "true";
+            document.body.appendChild(audioEl);
+        };
+        // Step 3: Attach event listener to element
+        ohnoesEl.addEventListener("click", onOhNoesClick);
+    </script>
 </body>
 </html>
